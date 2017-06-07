@@ -7,11 +7,21 @@ function handleSubmit(ev) {
     const g = ev.target
     const details = document.querySelector('#details')
     const name = f.personName.value
+    const favoriteColor = f.favoriteColor.value
+    const age = f.age.value
 
-    const boldedName = document.createElement('strong')
-    boldedName.textContent = name
+    // const boldedName = document.createElement('strong')
+    // boldedName.textContent = name
     
-    details.appendChild(boldedName)  
+    // details.appendChild(boldedName) 
+
+    details.innerHTML = `
+    <ul>
+      <li>Name: ${name}</li>
+      <li>Favorite Color: ${favoriteColor}</li>
+      <li>Age: ${age}</li>
+    </ul>
+    ` 
     
     // heading.textContent = f.personName.value + ' is approximately ' 
     // + g.personAge.value + ' years old. That sucks. One year closer to death.'
