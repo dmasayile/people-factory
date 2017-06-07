@@ -16,16 +16,24 @@ function handleSubmit(ev) {
 
     // const boldedName = document.createElement('strong')
     // boldedName.textContent = name
-    
     // details.appendChild(boldedName) 
 
-    details.innerHTML = `
-    <ul>
-      <li>Name: ${name}</li>
-      <li>Favorite Color: ${colorDiv}</li>
-      <li>Age: ${age}</li>
-    </ul>
-    ` 
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${name}`
+
+    const colorItem = document.createElement('li')
+    colorItem.innerHTML = `Favorite Color: ${colorDiv}`
+
+
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+    
+    const list = document.createElement('ul')
+    list.appendChild(nameItem)
+    list.appendChild(colorItem)
+    list.appendChild(ageItem)
+
+    details.appendChild(list)    
     
     // heading.textContent = f.personName.value + ' is approximately ' 
     // + g.personAge.value + ' years old. That sucks. One year closer to death.'
