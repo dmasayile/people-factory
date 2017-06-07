@@ -1,6 +1,15 @@
 const personForm = document.querySelector('#personForm')
 const personAge = document.querySelector('#personAge')
 
+function renderColor(color) {
+    const div = document.createElement('div')
+    div.style.backgroundColor = color
+    div.style.width = '100px'
+    div.style.height = '50px'
+    
+    return div 
+}
+
 function handleSubmit(ev) {
     ev.preventDefault()
     const f = ev.target
@@ -22,7 +31,7 @@ function handleSubmit(ev) {
     nameItem.textContent = `Name: ${name}`
 
     const colorItem = document.createElement('li')
-    colorItem.innerHTML = `Favorite Color: ${colorDiv}`
+    colorItem.innerHTML = `Favorite Color: ${renderColor(favoriteColor).outerHTML}`
 
 
     const ageItem = document.createElement('li')
